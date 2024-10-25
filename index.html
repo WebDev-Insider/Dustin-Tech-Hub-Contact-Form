@@ -5,76 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DustinTech Hub | Contact   Form</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./tailwind.min.css">
+    <script src="./contact.js"></script>
+    
 </head>
 <body>
-<div class="background">
-    <div class="container">
-        <div class="screen">
-            <div class="screen-header">
-                <div class="screen-header-left">
-                    <div class="screen-header-button close"></div>
-                    <div class="screen-header-button maximize"></div>
-                    <div class="screen-header-button minimize"></div>
-                </div>
-                <div class="screen-header-right">
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                </div>
+<div class="flex items-center min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto">
+        <div class="max-w-xl mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+            <div class="text-center">
+                <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
+                    Contact Us
+                </h1>
+                <p class="text-gray-400 dark:text-gray-400">
+                    Fill up the form below to send us a message.
+                </p>
             </div>
-            <div class="screen-body">
-                <div class="screen-body-item left">
-                    <div class="app-title">
-                        <span>CONTACT</span>
-                        <span>US</span>
-                    </div>
-                    <div class="app-contact">CONTACT INFO : +2349023456021</div>
-                    
-                </div>
-                <form action="https://api.web3forms.com/submit" method="POST">
-                 <div class="screen-body-item">
-                    <div class="app-form">
-                        <input type="hidden" name="access_key" value="592a9cbf-3184-42bf-86de-9452387e835b">
-                        <div class="app-form-group">
-                            <input class="app-form-control" placeholder="NAME" value="Krisantus Wanandi" name="name" type="text">
+            <div class="m-7">
+                <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                    <input type="hidden" name="access_key" value="592a9cbf-3184-42bf-86de-9452387e835b" />
+                    <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                    <input type="checkbox" name="botcheck" id="" style="display: none;" />
+
+                    <div class="flex mb-6 space-x-4">
+                        <div class="w-full md:w-1/2">
+                            <label for="fname" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">First
+                                Name</label>
+                            <input type="text" name="name" id="first_name" placeholder="John" required
+                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
                         </div>
-                        <div class="app-form-group">
-                            <input class="app-form-control" placeholder="EMAIL" name="email" type="email">
-                        </div>
-                        <div class="app-form-group">
-                            <input class="app-form-control" placeholder="CONTACT NO" name="phone number" type="tel">
-                        </div>
-                        <div class="app-form-group message">
-                            <input class="app-form-control" placeholder="MESSAGE" name="message" >
-                        </div>
-                        <div class="app-form-group buttons">
-                            <button class="app-form-button" type="submit">SEND</button>
+                        <div class="w-full md:w-1/2">
+                            <label for="lname" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Last
+                                Name</label>
+                            <input type="text" name="last_name" id="lname" placeholder="Doe" required
+                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
                         </div>
                     </div>
-                    
+
+                    <div class="flex mb-6 space-x-4">
+                        <div class="w-full md:w-1/2">
+                            <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email
+                                Address</label>
+                            <input type="email" name="email" id="email" placeholder="you@company.com" required
+                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        </div>
+
+                        <div class="w-full md:w-1/2">
+                            <label for="phone" class="block text-sm mb-2 text-gray-600 dark:text-gray-400">Phone
+                                Number</label>
+                            <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" required
+                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Your
+                            Message</label>
+
+                        <textarea rows="5" name="message" id="message" placeholder="Your Message"
+                            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                            required></textarea>
+                    </div>
+                    <div class="mb-6">
+                        <button type="submit"
+                            class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
+                            Send Message
+                        </button>
+                      
+                        
+                        
+                        </a>
+                    </div>
+                    <p class="text-base text-center text-gray-400" id="result"></p>
                 </form>
-                </div>
+                <a href="https://dustin-tech-hub.vercel.app/">
+                    <button class="w-full px-3 py-4 text-white bg-red-500 rounded-md focus:bg-red-600 focus:outline-none">
+                        Back to HomePage
+                    </button>
             </div>
-        </div>
-        <div class="credits">
-            inspired by
-            <a class="credits-link" href="https://henrydustin.netlify.app/" target="_blank">
-                <svg class="dribbble" viewBox="0 0 200 200">
-                    <g stroke="#ed1c6f" fill="none">
-                        <circle cx="100" cy="100" r="90" stroke-width="20"></circle>
-                        <path
-                            d="M62.737004,13.7923523 C105.08055,51.0454853 135.018754,126.906957 141.768278,182.963345"
-                            stroke-width="20"></path>
-                        <path
-                            d="M10.3787186,87.7261455 C41.7092324,90.9577894 125.850356,86.5317271 163.474536,38.7920951"
-                            stroke-width="20"></path>
-                        <path
-                            d="M41.3611549,163.928627 C62.9207607,117.659048 137.020642,86.7137169 189.041451,107.858103"
-                            stroke-width="20"></path>
-                    </g>
-                </svg>
-                Henry Dustin
-            </a>
         </div>
     </div>
 </div>
